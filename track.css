@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.track-page {
+  background: linear-gradient(135deg, #0c0a08, #3b2a20, #b48a63);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-box {
+  background: rgba(255,255,255,0.08);
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  max-width: 550px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  color: #f3e3cf;
+}
+
+.track-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: "Playfair Display";
+  margin-bottom: 10px;
+  color: #f4d7b2;
+}
+
+.order-id {
+  margin-bottom: 30px;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid #f4d7b2;
+  background: transparent;
+  margin-bottom: 8px;
+}
+
+.circle.done {
+  background: #f4d7b2;
+}
+
+.line {
+  width: 3px;
+  height: 40px;
+  background: #8e6d4b;
+  margin: 5px 0;
+  border-radius: 3px;
+}
+
+.line.done {
+  background: #f4d7b2;
+}
+
+.track-btn {
+  margin-top: 30px;
+  padding: 14px 0;
+  width: 100%;
+  background: linear-gradient(120deg, #f5d6a9, #edc78a);
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  color: #3b2a20;
+}

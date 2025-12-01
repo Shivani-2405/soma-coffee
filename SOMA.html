@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SOMA — Premium Coffee Beans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="SOMA.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">SOMA</div>
+    <nav>
+      <a href="#beans">Beans</a>
+      <a href="#best">Best Sellers</a>
+      <a href="#contact">Contact</a>
+      <a href="#story">Our Story</a>
+      <button id="themeToggle" class="theme-btn">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Premium Roasted<br/>Coffee Beans</h1>
+        <p>Single-origin, hand-roasted beans with bold aroma and smooth finish. Ethically sourced from small farms.</p>
+        <div class="hero-cta">
+          <button id="shopNow" class="btn">Shop Now</button>
+          <a class="learn" href="#best">Our Best Sellers</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- replace soma-bag.png with your generated bag image -->
+        <img src="SOMA.png" alt="SOMA coffee bag" class="bag main-bag">
+            </div>
+    </section>
+
+    <section id="best" class="best-sellers">
+      <h2>Our Best Sellers</h2>
+      <div class="grid">
+       <article class="product">
+  <a href="product-arabica.html" class="product-link">
+    <img src="image.png">
+    <h3>Arabica Gold Roast</h3>
+    <p class="price">$12.99</p>
+        <div class="rating">★★★★★</div>
+          <button class="add">Add to cart</button>
+  </a>
+</article>
+
+       <article class="product">
+  <a href="robusta.html" class="product-link">
+    <img src="ROBUSTA.png" alt="Robusta — SOMA" />
+    <h3>Robusta Dark Roast</h3>
+    <p class="price">$14.99</p>
+    <div class="rating">★★★★★</div>
+    <button class="add">Add to Cart</button>
+  </a>
+</article>
+
+        <article class="product">
+  <a href="blend.html" class="product-link">
+    <img src="download.jpg" alt="Signature Blend — SOMA" />
+    <h3>Signature House Blend</h3>
+    <p class="price">$16.49</p>
+    <div class="rating">★★★★☆</div>
+    <button class="add">Add to cart</button>
+  </a>
+</article>
+
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+  <h2>What Our Customers Say</h2>
+
+  <div class="slider">
+    <div class="slide active">
+      <p class="review">
+        “Rich aroma, perfect roast level. SOMA has become my morning routine!”
+      </p>
+      <h3>- Ananya Rao</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="slide">
+      <p class="review">
+        “Smooth, bold, and unbelievably fresh. The best beans I've ever tried.”
+      </p>
+      <h3>- Rohan Verma</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="slide">
+      <p class="review">
+        “Fast delivery and high-quality beans. Truly premium experience.”
+      </p>
+      <h3>- Meera Sahu</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+
+    <section class="business-card-section">
+  <h2 class="bc-title">Our Business Card</h2>
+
+  <div class="business-card-wrapper">
+    <img src="BUIS.png" alt="SOMA Business Card" class="business-card-img">
+  </div>
+</section>
+
+
+<section id="story" class="our-story">
+  <h2>Our Story</h2>
+  <video controls class="story-video">
+  <source src="soma.mp4" type="video/mp4">
+</video>
+<p>At SOMA, every bean begins a journey.
+Hand-picked at perfect ripeness, roasted with precision, and crafted with care —
+our coffee celebrates purity, passion, and the art of slow living.
+
+Each aroma, each sip, each warm moment…
+is a reminder of where it all began.
+
+SOMA — Experience the soul of coffee.</p>
+</section>
+
+
+
+  <footer id="contact">
+  <div class="footer-left">
+    © <strong>SOMA</strong> • All rights reserved •Experience the Soul of Coffee
+  </div>
+
+  <div class="social">
+    <a href="https://instagram.com/sai_shivani_senapati" target="_blank">Instagram</a>
+    <span>•</span>
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+    <span>•</span>
+    <a href="mailto:soma@gmail.com">Email</a>
+  </div>
+  
+</footer>
+
+
+
+  <script src="SOMA.js"></script>
+  
+
+  <!-- Floating Cart Icon -->
+<div class="floating-cart" onclick="location.href='cart.html'">
+    🛒 <span id="cartCount">0</span>
+</div>
+  <script type="module">
+  import { getFirestore, collection, addDoc } 
+from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+const db = getFirestore(app);
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDdu5K9G8lcuijeZ9n3CmdhK9Y62gLdrM4",
+    authDomain: "soma-coffee-3ed41.firebaseapp.com",
+    projectId: "soma-coffee-3ed41",
+    storageBucket: "soma-coffee-3ed41.firebasestorage.app",
+    messagingSenderId: "294739902230",
+    appId: "1:294739902230:web:c3a6d610f664f5a6dc9a37",
+    measurementId: "G-ND0QGRP8FY"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  console.log("🔥 Firebase Loaded!");
+console.log("App:", app);
+console.log("Analytics:", analytics);
+
+</script>
+
+</body>
+</html>

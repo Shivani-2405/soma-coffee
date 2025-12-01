@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SOMA — Payment</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body class="payment-page">
+
+  <header class="nav-mini">
+    <div class="brand">SOMA</div>
+  </header>
+
+  <main class="pay-wrapper">
+    <section class="pay-box">
+      <h1>Secure Payment</h1>
+      <p class="sub">Pay using UPI — scan the QR with Google Pay / PhonePe / Paytm</p>
+
+      <div class="pay-grid">
+        <div class="qr-card">
+          <img src="upi-qr.png" alt="UPI QR" class="qr">
+          <p class="upi-id">SOMA@upi</p>
+          <p class="amount">Amount: $<span id="payAmount">0.00</span></p>
+        </div>
+
+        <div class="pay-info">
+          <h3>How to pay</h3>
+          <ol>
+            <li>Open your UPI app (Google Pay / PhonePe / Paytm)</li>
+            <li>Scan the QR code or paste the UPI id</li>
+            <li>Enter the amount shown and confirm the payment</li>
+            <li>After paying, click <strong>I have paid</strong></li>
+          </ol>
+
+          <div class="buttons">
+            <button id="paidBtn" class="primary">I have paid</button>
+            <button id="cancelBtn" class="ghost">Cancel & Back</button>
+          </div>
+
+          <p class="note">This is a mock payment screen for demo. No real money will be transferred.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="payment.js"></script>
+</body>
+</html>

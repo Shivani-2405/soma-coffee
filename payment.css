@@ -1,0 +1,24 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, sans-serif}
+.payment-page{min-height:100vh;background:linear-gradient(135deg,#0c0a08,#3b2a20,#ad8456);color:#f5e9d7;padding:30px 20px}
+.nav-mini{max-width:1100px;margin:0 auto;padding:12px 0}
+.nav-mini .brand{font-family:"Playfair Display";font-size:20px;color:#f5d7b3}
+.pay-wrapper{max-width:1100px;margin:30px auto}
+.pay-box{background:rgba(255,255,255,0.06);padding:28px;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.45)}
+.pay-box h1{font-family:"Playfair Display";font-size:32px;margin-bottom:6px}
+.pay-box .sub{opacity:0.85;margin-bottom:18px}
+.pay-grid{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:start}
+.qr-card{background:rgba(0,0,0,0.28);padding:16px;border-radius:12px;text-align:center}
+.qr{width:220px;height:220px;object-fit:cover;border-radius:8px;box-shadow:0 12px 30px rgba(0,0,0,0.5);margin-bottom:12px}
+.upi-id{font-weight:700;color:#f4d6a6;margin-bottom:6px}
+.amount{opacity:0.9}
+.pay-info h3{font-family:"Playfair Display";margin-bottom:8px}
+.pay-info ol{margin-left:18px;margin-bottom:12px;opacity:0.95}
+.pay-info li{margin-bottom:8px}
+.buttons{display:flex;gap:12px;margin-top:12px}
+.primary{background:linear-gradient(120deg,#f4d6a6,#e7bd76);border:none;padding:12px 16px;border-radius:10px;cursor:pointer;font-weight:700;color:#1a120f}
+.ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:12px 16px;border-radius:10px;cursor:pointer;color:#f5e9d7}
+.note{opacity:0.8;margin-top:12px;font-size:13px}
+@media (max-width:900px){
+  .pay-grid{grid-template-columns:1fr;align-items:center}
+  .qr{width:180px;height:180px}
+}

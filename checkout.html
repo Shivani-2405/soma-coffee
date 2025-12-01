@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SOMA — Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body class="checkout-page">
+
+<section class="checkout-wrapper">
+
+    <h1>Checkout</h1>
+
+    <div class="checkout-grid">
+
+        <!-- LEFT SIDE — CUSTOMER INFO -->
+        <div class="checkout-left">
+
+            <h2>Customer Details</h2>
+
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter your full name">
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="your@email.com">
+
+            <label>Phone Number</label>
+            <input type="text" id="phone" placeholder="+91 9876543210">
+
+            <label>Address</label>
+            <textarea id="address" placeholder="House No, Street, City, State"></textarea>
+
+            <h2>Payment Method</h2>
+
+            <label class="pay-option">
+                <input type="radio" name="pay" value="COD" checked>
+                Cash on Delivery (COD)
+            </label>
+
+            <label class="pay-option">
+                <input type="radio" name="pay" value="UPI">
+                UPI (Google Pay / PhonePe / Paytm)
+            </label>
+
+        </div>
+
+        <!-- RIGHT SIDE — ORDER SUMMARY -->
+        <div class="checkout-right">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-items">
+                <!-- JS will load here -->
+            </div>
+
+            <p class="summary-total">
+                Total Amount: $<span id="finalTotal">0.00</span>
+            </p>
+
+            <button class="place-btn" id="placeOrder">Place Order</button>
+
+        </div>
+
+    </div>
+
+</section>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getFirestore, collection, addDoc } 
+from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDdu5K9G8lcuijeZ9n3CmdhK9Y62gLdrM4",
+    authDomain: "soma-coffee-3ed41.firebaseapp.com",
+    projectId: "soma-coffee-3ed41",
+    storageBucket: "soma-coffee-3ed41.firebasestorage.app",
+    messagingSenderId: "294739902230",
+    appId: "1:294739902230:web:c3a6d610f664f5a6dc9a37",
+    measurementId: "G-ND0QGRP8FY"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// === ORDER SAVE ===
+document.getElementById("placeOrder").addEventListener("click", async () => {
+
+  let cart = JSON.parse(localStorage.getItem("somaCart")) || [];
+  let total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+
+  const name = document.getElementById("name").value;
+  const address = document.getElementById("address").value;
+  const payMethod = document.querySelector('input[name="pay"]:checked')?.value;
+
+  try {
+    await addDoc(collection(db, "orders"), {
+      name: name,
+      address: address,
+      cart: cart,
+      totalAmount: total,
+      paymentMethod: payMethod,
+      createdAt: new Date()
+    });
+
+    localStorage.removeItem("somaCart");
+    window.location.href = "success.html";
+
+  } catch (err) {
+    console.error("Error adding order:", err);
+    alert("Order failed!");
+  }
+
+});
+
+</script>
+
+
+<script src="checkout.js"></script>
+</body>
+</html>

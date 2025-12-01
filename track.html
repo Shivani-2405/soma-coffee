@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SOMA — Track Order</title>
+    <link rel="stylesheet" href="track.css">
+</head>
+
+<body class="track-page">
+
+<section class="track-box">
+
+    <img src="SOMA.png" class="track-logo">
+
+    <h1>Track Your Order</h1>
+
+    <p class="order-id">Order ID: <span id="orderID"></span></p>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="circle done"></div>
+            <p>Order Confirmed</p>
+        </div>
+
+        <div class="line done"></div>
+
+        <div class="step">
+            <div class="circle done" id="packed"></div>
+            <p>Packed</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle" id="shipped"></div>
+            <p>Shipped</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle" id="delivered"></div>
+            <p>Delivered</p>
+        </div>
+
+    </div>
+
+    <button class="track-btn" onclick="location.href='SOMA.html'">
+        Back to Home
+    </button>
+
+</section>
+
+<script src="track.js"></script>
+</body>
+</html>
